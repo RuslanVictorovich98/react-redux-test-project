@@ -1,8 +1,8 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, all } from 'redux-saga/effects';
 
 // ActionsType
 export const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST';
-export const CREATE_LIST = 'CREATE_LIST';
+export const LET_LIST = 'LET_LIST';
 export const SET_CATEGORY = 'SET_CATEGORY';
 export const SEARCH_DATA = 'SEARCH_DATA';
 export const PATHNAME_DATA = 'PATHNAME_DATA';
@@ -14,7 +14,7 @@ export const fetchUsersRequest = () => {
 
 export const create = (event) => {
     return {
-        type: CREATE_LIST,
+        type: LET_LIST,
         payload: event
     }
 }
@@ -43,7 +43,8 @@ export const pathname = (event) => {
 // Reducer 
 const list =  {
     products: [],
-    productsFilter: [],
+    loading: true,
+    firstRender: true,
     historySearch: '',
     category: '',
     search: ''
@@ -51,30 +52,35 @@ const list =  {
 
 export function mainList (state = list, action){
     switch (action.type){
-        case CREATE_LIST:
-            return {...state,
+        case LET_LIST:
+            return {
+                ...state,
                 products: action.payload,
-                productsFilter: action.payload,
+                loading: false,
                 category: 'All category'
               };
 
         case SET_CATEGORY:
             return {
                     ...state, 
-                    category: action.payload
+                    category: action.payload,
+                    firstRender: false,
                 };
 
         case SEARCH_DATA: 
             return {
                 ...state,
-                search: action.payload
+                search: action.payload,
+                firstRender: false,
             };
 
         case PATHNAME_DATA:
             let category = action.payload.pathname.slice(1).replace(/-/g," ");
+            
             return {
                 ...state,
                 historySearch: action.payload.search,
+                firstRender: true,
                 category: category,
                 search: action.payload.search,
             };
@@ -85,8 +91,8 @@ export function mainList (state = list, action){
 }
 
 // Saga
-export function* fetchUser() {
-  const url = 'http://localhost:3000/data.json';
+export function* fetchProduct() {
+  const url = '/data.json';
   try {
     const data = yield call(() => {
               return fetch(url)
@@ -98,8 +104,10 @@ export function* fetchUser() {
   }        
  }
  
- export default function* GetProduct() {
-    yield takeLatest(FETCH_USERS_REQUEST, fetchUser);
+ export  function* GetProduct() {
+    yield takeLatest(FETCH_USERS_REQUEST, fetchProduct);
   }
+
+export default function* rootSaga() { yield all([GetProduct()]);}
 
  
