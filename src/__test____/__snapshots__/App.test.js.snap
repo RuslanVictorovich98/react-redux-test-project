@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST component ListCategory TEST spapshot to component 1`] = `
+<div>
+  <Connect(Header) />
+  <Container
+    fluid={false}
+  >
+    <ForwardRef
+      noGutters={false}
+    >
+      <Col
+        className="left-panel-category"
+        lg="3"
+        sm="4"
+      >
+        <Connect(ListCategory) />
+      </Col>
+      <Col
+        lg="9"
+        sm="8"
+      >
+        <Connect(ListProducts) />
+      </Col>
+    </ForwardRef>
+  </Container>
+</div>
+`;

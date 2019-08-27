@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST component Header TEST spapshot to component 1`] = `
+<header
+  className="App-header"
+>
+  <Container
+    fluid={false}
+  >
+    <ForwardRef
+      noGutters={false}
+    >
+      <Col
+        lg="4"
+        sm="4"
+      >
+        <h3
+          className="App-title"
+          onClick={[Function]}
+        >
+          ProductsAPI
+        </h3>
+      </Col>
+      <Col
+        lg="6"
+        sm="6"
+      >
+        <input
+          className="input-filter form-control"
+          defaultValue=""
+          id="input-filter"
+          onChange={[Function]}
+          placeholder="Введите имя...."
+          type="search"
+        />
+      </Col>
+    </ForwardRef>
+  </Container>
+</header>
+`;

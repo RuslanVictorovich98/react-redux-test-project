@@ -15,7 +15,6 @@ class ListOneProduct extends React.Component {
                     <span ><strong>Цена: </strong>{product.price} </span> <br/>
                     <span ><strong>Звезд: </strong>{product.stars} </span> <br/>
                 </div>
-            
             </div>
         );
     }

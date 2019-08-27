@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST component ListCategory TEST spapshot to component 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <h4
+    className="category-list"
+  >
+    <Link
+      onClick={[Function]}
+      to="/all-category"
+    >
+      All category
+    </Link>
+  </h4>
+  <h4
+    className="category-list data-value"
+    key="0"
+    onClick={[Function]}
+  >
+    <Link
+      to="home-&-kitchen"
+    >
+      Home & Kitchen
+    </Link>
+  </h4>
+</Router>
+`;

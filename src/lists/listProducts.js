@@ -6,10 +6,11 @@ import ListOneProduct from './listOneProduct';
 import {createBrowserHistory} from 'history';
 const history = createBrowserHistory();
 
-class ListProducts extends React.Component {
+export class ListProducts extends React.Component {
 
     returnProduct = () => {
         const {mainList} = this.props;
+        
         if (mainList.loading === true) {
             return <div className="content-loading">loading...</div>
         } else  {

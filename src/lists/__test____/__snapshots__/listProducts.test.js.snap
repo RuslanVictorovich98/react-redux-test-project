@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TEST component ListCategory TEST spapshot to component 1`] = `
+<div
+  className="App-content"
+>
+  <div
+    className="content-loading"
+  >
+    loading...
+  </div>
+</div>
+`;

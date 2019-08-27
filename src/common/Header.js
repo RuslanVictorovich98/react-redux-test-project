@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 import {createBrowserHistory} from 'history';
 const history = createBrowserHistory();
 
-class Header extends React.Component {
+export class Header extends React.Component {
 
     handleSubmit = (e) => {
         const {search} = this.props;
@@ -22,8 +22,6 @@ class Header extends React.Component {
 
     getHistory = () =>{
         this.props.pathname(history.location)
-        // console.log(history.location);
-        // this.props.search(history.location.search.slice(1));
     }
 
     componentDidMount(){

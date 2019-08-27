@@ -8,12 +8,10 @@ import {createBrowserHistory} from 'history';
 
 const history = createBrowserHistory();
 
-class ListCategory extends React.Component {
+export class ListCategory extends React.Component {
+
 
     renderCategory = () => {
-        if (this.props.mainList.products === []) {
-            return <div>loading...</div>
-        } else {
             let data =  this.props.mainList.products.map(elem => elem.bsr_category)
             let categoryData = data.filter((item, pos) => data.indexOf(item) === pos)
 
@@ -21,13 +19,11 @@ class ListCategory extends React.Component {
                 this.props.category(e.currentTarget.innerText);
                 history.push({search: '?' + this.props.mainList.search});
             }
-
             return categoryData.map((elem, i) => (
-                <h4 className="category-list" key={i}  onClick={renderCategoryReturnOnClick}>
+                <h4 className="category-list data-value" key={i}  onClick={renderCategoryReturnOnClick}>
                     <Link to={slugify(elem)}>{elem}</Link>
                 </h4>)
             )
-        }
     }
 
     clickByLink = (e) => {

@@ -13,7 +13,7 @@ import Header from './common/Header';
 import ListCategory from './lists/listCategory';
 import ListProducts from './lists/listProducts';
 
-class App extends React.Component {
+export class App extends React.Component {
 
     
     componentDidMount() {
@@ -46,7 +46,6 @@ App.propTypes = {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUsersRequest: (i) => dispatch(fetchUsersRequest(i)),
-
     }
 }
 
