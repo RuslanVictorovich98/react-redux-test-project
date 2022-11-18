@@ -15,7 +15,7 @@
     "react-request": "^3.1.2",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.0",
+    "react-scripts": "5.0.1",
     "react-slugify": "^1.2.0",
     "redux-saga": "^1.0.5",
     "redux-thunk": "^2.3.0",
@@ -53,7 +53,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.7.1",
     "jest-fetch-mock": "^2.1.2",
-    "react-dev-utils": "^9.0.1",
+    "react-dev-utils": "^12.0.1",
     "redux-mock-store": "^1.5.3"
   }
 }
